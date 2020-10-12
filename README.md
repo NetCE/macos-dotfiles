@@ -39,27 +39,41 @@ To update later on, just run that command again.
 
 If `~/.path` exists, it will be sourced along with the other files, before any feature testing (such as [detecting which version of `ls` is being used](https://github.com/NetCE/macos-dotfiles/blob/0cd43d175a25c0e13e1e06ab31ccfd9f0169cf73/.aliases#L18)) takes place.
 
-Here’s an example `~/.path` file that adds `/usr/local/bin` to the `$PATH`:
+**Remember:** Any time you think about updating `.bash_profile` or similar to modify your default paths, remember that it will be rewritten the next time you source dotfiles. Put path configuration into `~/.path` instead, and then source your dotfiles.
+
+Here’s an example `~/.path` file that adds certain preferred keg-only brew installs to the `$PATH`:
 
 ```bash
-export PATH="/usr/local/bin:$PATH"
+# Set preferred versions of certain keg-only brew installs
+PATH="/usr/local/opt/python@3.8/bin:$PATH"
+PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+
 ```
 
 ### Add custom commands without creating a new fork
 
 If `~/.extra` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
 
+**Remember:** Any time you think about updating `.bash_profile` or similar to add custom commands, remember that it will be rewritten the next time you source dotfiles. Put them into `~/.extra` instead, and then source your dotfiles.
+
 My `~/.extra` looks something like this:
 
 ```bash
-# Git credentials
+# Git configs
 # Not in the repository, to prevent people from accidentally committing with these values
 GIT_AUTHOR_NAME="Firstname Lastname"
-GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-git config --global user.name "$GIT_AUTHOR_NAME"
 GIT_AUTHOR_EMAIL="firname.lastname@netce.com"
+
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+
+git config --global user.name "$GIT_AUTHOR_NAME"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
+
+git config --global commit.gpgsign false
+git config --global pull.ff only
+
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 ```
 
 You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/NetCE/macos-dotfiles/fork) instead, though.
