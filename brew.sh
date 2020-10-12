@@ -61,8 +61,7 @@ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 brew install python@3.7
 brew install python@3.8
 brew install python@3.9
-echo 'export PATH="/usr/local/opt/python@3.9/libexec/bin:/usr/local/sbin:$PATH"' >> ~/.bashrc
-export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
+export PATH="/usr/local/opt/python@3.8/libexec/bin:$PATH"
 pip install virtualenv
 pip install virtualenvwrapper
 
@@ -70,6 +69,10 @@ pip install virtualenvwrapper
 brew install node
 brew install nvm
 brew install nodenv
+
+#Set up Postgres
+brew install postgresql
+brew install postgresql@9.6
 
 # Install cloud utilities
 brew install awscli
@@ -112,6 +115,7 @@ brew install xpdf
 # Install other useful binaries.
 # Most not really needed for NetCE, but kept here for reference.
 brew install ack
+brew install jq
 brew install p7zip
 brew install rename
 brew install ssh-copy-id
@@ -151,6 +155,7 @@ brew cask install postman
 brew cask install ringcentral
 brew cask install skype-for-business
 brew cask install slack
+brew cask install visual-studio
 brew cask install vmware-horizon-client
 brew cask install vmware-remote-console
 brew cask install xerox-print-driver
