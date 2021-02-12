@@ -2,6 +2,9 @@
 
 # Install command-line tools using Homebrew.
 
+# Tap drivers casks
+brew tap homebrew/cask-drivers
+
 # Make sure we’re using the latest Homebrew.
 brew update
 
@@ -14,6 +17,7 @@ BREW_PREFIX=$(brew --prefix)
 # Install Git with LFS
 brew install git
 brew install git-lfs
+git lfs install
 
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -134,32 +138,27 @@ brew install vbindiff
 #################################################################
 # Install various Cask software.
 
-brew cask install adobe-acrobat-reader
-brew cask install atom
-brew cask install cyberduck
-brew cask install docker
-brew cask install firefox
-brew cask install flash-npapi
-brew cask install flash-ppapi
-brew cask install gimp
-brew cask install google-chrome
-brew cask install gotomeeting
-brew cask install jetbrains-toolbox
-brew cask install lastpass
-brew cask install libreoffice
-brew cask install logitech-control-center
-brew cask install microsoft-edge
-brew cask install parallels
-brew cask install plantronics-hub
-brew cask install postman
-brew cask install ringcentral
-brew cask install skype-for-business
-brew cask install slack
-brew cask install visual-studio
-brew cask install vmware-horizon-client
-brew cask install vmware-remote-console
-brew cask install xerox-print-driver
-brew cask install zoomus
+brew install adobe-acrobat-reader
+brew install atom
+brew install firefox
+brew install gimp
+brew install google-chrome
+brew install gotomeeting
+brew install jetbrains-toolbox
+brew install lastpass
+brew install libreoffice
+brew install logitech-control-center
+brew install microsoft-edge
+brew install plantronics-hub
+brew install postman
+brew install ringcentral
+brew install skype-for-business
+brew install slack
+brew install visual-studio
+brew install vmware-horizon-client
+brew install vmware-remote-console
+brew install xerox-print-driver
+brew install zoom
 
 
 # Remove outdated versions from the cellar.
