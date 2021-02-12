@@ -71,7 +71,7 @@ git config --global user.name "$GIT_AUTHOR_NAME"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 
 git config --global commit.gpgsign false
-git config --global pull.ff only
+git config --global pull.rebase true
 
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 ```
